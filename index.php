@@ -13,4 +13,8 @@ if(DEBUG){
 }else{
 	ini_set('display_error', 'Off');
 }
+
+include CORE.'/common/function.php';
+include CORE.'/qingsong.php';
+\core\qingsong::run();
 ?>
