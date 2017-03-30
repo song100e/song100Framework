@@ -16,5 +16,6 @@ if(DEBUG){
 
 include CORE.'/common/function.php';
 include CORE.'/qingsong.php';
+spl_autoload_register('\core\qingsong::load');
 \core\qingsong::run();
 ?>
