@@ -13,7 +13,8 @@ class qingsong
 	}
 
 	public static function run(){
-		p('ok');
+		//p('ok');
+		$route = new \core\lib\route();
 	}
 	
 	public static function load($class){
@@ -21,7 +22,7 @@ class qingsong
 			return true;
 		}else{
 			$class = str_replace('\\', '/', $class);
-			$file = QINGSONG.'/'.$calss.'.php';
+			$file = QINGSONG.'/'.$class.'.php';
 			if(is_file($file)){
 				include $file;
 				self::$classMap[$class] = $class;
