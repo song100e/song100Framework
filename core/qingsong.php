@@ -15,6 +15,7 @@ class qingsong
 	public static function run(){
 		//p('ok');
 		$route = new \core\lib\route();
+		var_dump($route);
 	}
 	
 	public static function load($class){
