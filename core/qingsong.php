@@ -13,9 +13,18 @@ class qingsong
 	}
 
 	public static function run(){
-		//p('ok');
 		$route = new \core\lib\route();
-		var_dump($route);
+		$ctrlClass = $route->ctrl;
+		$action = $route->action;
+		$ctrlfile = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';
+		$ctrlClass = '\\'.MODULE.'\ctrl\\'.$ctrlClass.'Ctrl';
+		if(is_file($ctrlfile)){
+			include $ctrlfile;
+			$ctrl = new $ctrlClass();
+			$ctrl->$action();
+		}else{
+			throw new \Exception('找不到控制器'.$ctrlClass);
+		}
 	}
 	
 	public static function load($class){

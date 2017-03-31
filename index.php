@@ -6,7 +6,7 @@
 define('QINGSONG', realpath('./'));
 define('CORE', QINGSONG.'/core');
 define('APP', QINGSONG.'/app');
-
+define('MODULE','app');
 define('DEBUG', true);
 if(DEBUG){
 	ini_set('display_error', 'On');		
