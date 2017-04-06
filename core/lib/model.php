@@ -1,14 +1,11 @@
 <?php
 namespace core\lib;
-
-use \core\config;
+use core\lib\conf;
 class model extends \PDO{
 	public function __construct(){
-		$dsn = "mysql:host=192.168.10.166;dbname=ez_cloud_cs";
-		$username = "test";
-		$password = "123456";
+		$datebase = conf::all('mysql');
 		try{
-			parent::__construct($dsn, $username, $password);
+			parent::__construct($datebase['DSN'], $datebase['NAME'], $datebase['PASSWORD']);
 		}catch (\PDOException $e){
 			p($e->getMessage());
 		}

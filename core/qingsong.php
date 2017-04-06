@@ -6,6 +6,7 @@ namespace core;
 */
 class qingsong
 {
+	public $assign;
 	public static $classMap = array();
 	function __construct()
 	{
