@@ -1,6 +1,10 @@
 <?php
 namespace core\lib;
 
+/**
+ * 配置类
+ * @author haoqingsong.org
+ */
 class conf {
 	
 	static public $conf = array();

@@ -2,7 +2,7 @@
 namespace core;
 
 /**
-* 
+* 框架核心类
 */
 class qingsong
 {
@@ -14,6 +14,8 @@ class qingsong
 	}
 
 	public static function run(){
+		\core\lib\log::init();
+		//\core\lib\log::log($_SERVER);
 		$route = new \core\lib\route();
 		$ctrlClass = $route->ctrl;
 		$action = $route->action;
@@ -23,6 +25,7 @@ class qingsong
 			include $ctrlfile;
 			$ctrl = new $ctrlClass();
 			$ctrl->$action();
+			\core\lib\log::log('Ctrl:'.$ctrlClass.'         Action:'.$action);
 		}else{
 			throw new \Exception('找不到控制器'.$ctrlClass);
 		}
@@ -43,10 +46,19 @@ class qingsong
 		}
 	}
 	
+	/**
+	 * 视图传值
+	 * @param string $name
+	 * @param string $value
+	 */
 	public function assign($name, $value){
 		$this->assign[$name] = $value;
 	}
 	
+	/**
+	 * 解析视图变量
+	 * @param string $file
+	 */
 	public function display($file){
 		$file = APP.'/views/'.$file;
 		if(is_file($file)){

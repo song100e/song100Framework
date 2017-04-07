@@ -1,6 +1,11 @@
 <?php
 namespace core\lib;
+
 use core\lib\conf;
+/**
+ * 路由类
+ * @author haoqingsong.org
+ */
 class route {
 	
 	public $ctrl;

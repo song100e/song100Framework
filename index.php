@@ -3,6 +3,7 @@
  * 入口文件
  * 定义常量、关键路径、debug模式
  */	
+date_default_timezone_set("Asia/Shanghai");
 define('QINGSONG', realpath('./'));
 define('CORE', QINGSONG.'/core');
 define('APP', QINGSONG.'/app');
